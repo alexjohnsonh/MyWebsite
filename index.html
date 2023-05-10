@@ -7,24 +7,31 @@
     <link rel="stylesheet" href="main.css">
 </head>
 <body>
-    <script type="module" src="/main.js"></script>
     <div class="topnav">
-
-        <!-- Centered link -->
         <div class="topnav-centered">
           <a href="./index.html" class="active">HOME</a>
         </div>
-        
-        <!-- Left-aligned links (default) -->
         <a href="./cv.html">CV</a>
         <a href="./photo.html">PHOTOGRAPHIC WORKS</a>
-        
-        <!-- Right-aligned links -->
         <div class="topnav-right">
             <a href="./works.html">DIGITAL WORKS</a>
           <a href="./contact.html">CONTACT</a>
         </div>
-        
       </div>
+      <script type="module" src="/main.js"></script>
+    <script type="module">
+      import * as THREE from 'three';
+      </script>
+      <body>
+        <canvas id="c"></canvas>
+      </body>
+      <script type="module">
+        import * as THREE from 'three';
+         
+        function main() {
+          const canvas = document.querySelector('#c');
+          const renderer = new THREE.WebGLRenderer({antialias: true, canvas});
+        }
+        </script>
 </body>
 </html>
