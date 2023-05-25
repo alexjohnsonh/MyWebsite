@@ -1,27 +1,20 @@
 
-img { width: 100%; 
-  height: 100%; 
-  display: block;
-  filter: blur(6px);
-  transition: 1s filter linear;
-  border: 0px;
-  z-index:0;
-}
-
-  img:hover {
-    filter: blur(0px);
-  }
+img { width: 100%; height: 100%; display: block }
 
 
 
  
  body,html {
-    background-color: rgb(255, 255, 255);
+    background-color: black;
   margin: 0;
   width: 100vw;
   height: 100vh;
   font-family: 'Garamond'
 }
+
+h1 {
+    text-align: center;
+  }
   
   .topnav {
     position: relative;
@@ -30,7 +23,7 @@ img { width: 100%;
   
   .topnav a {
     float: left;
-    color: #5d5d5d;
+    color: #cdcdcd;
     text-align: center;
     padding: 14px 16px;
     text-decoration: none;
@@ -43,7 +36,7 @@ img { width: 100%;
 
   
   .topnav a.active {
-    color: rgb(4, 4, 4);
+    color: rgb(255, 255, 255);
   }
   
   .topnav-centered a {
@@ -77,9 +70,9 @@ img { width: 100%;
       text-align: left;
     } 
    
-    /* ========== MAIN CONTENT CONTAINERS ========= */
+   /* ========== MAIN CONTENT CONTAINERS ========= */
 /* Desktops */
-@media (min-width:768px) { .container-block { padding: 11% 8% } }
+@media (min-width:768px) { .container-block { padding: 4% 8% } }
 
 /* Mobiles */
 @media (max-width:767px) { .container-block { padding: 11% 8% } }
@@ -88,9 +81,9 @@ img { width: 100%;
 /* =========== SUB-HEADINGS AND PARAGRAPHS ============*/
 
 /* Sub-headings inside flexbox child columns */
-.item-col-3 h3 { 
+.item-col-1 h3 { 
     font-size: calc(20px + (38 - 22) * ((100vw - 320px) / (1600 - 320)));
-    color:#000000;
+    color:#fefefe;
     margin-bottom: 0px;
     margin-top: 5px;
     text-align: left;
@@ -98,9 +91,9 @@ img { width: 100%;
 }
 
 /* Paragraphs inside flexbox child columns */
-.item-col-3 p { 
+.item-col-1 p { 
     font-size: calc(16px + (20 - 16) * ((100vw - 320px) / (1600 - 320)));
-    color:#5d5d5d;
+    color:#ffffff;
     margin-top: 0px;
     margin-left: 5px;
 }
@@ -109,47 +102,49 @@ img { width: 100%;
 
 /* Flexbox parent container */
 .container-flexbox {
-  display: flex; 
-  justify-content: space-between; 
-  flex-wrap: wrap; 
-}
+    display: flex; 
+    justify-content: space-between; 
+    flex-wrap: wrap; 
+    margin-left: 5px;
+ }
 
 /* Desktops: flexbox child columns */
 @media (min-width:768px) {
-  .item-col-3 { width: 29% }
+    .item-col-1 { width: 50% }
 }
 
 /* Mobiles: flexbox child columns */
 @media (max-width: 767px) {
-  .item-col-3 { width: 100% }
-  /* Vertical spacing under child columns */
-  .item-col-3 { margin-bottom: 32px }
-  /* No vertical spacing under last child column */
-  .item-col-3:last-child  { margin-bottom: 0 } 
+    .item-col-1 { width: 90% }
+    /* Vertical spacing under child columns */
+    .item-col-1 { margin-bottom: 32px }
+    /* No vertical spacing under last child column */
+    .item-col-1:last-child  { margin-bottom: 0 } 
 }
 
 /* Desktops: inner padding for child columns */
 @media (min-width: 768px) {
-  .item-col-3.item-col-padding { padding: 1.8% 2% 2.2% 2% }
+    .item-col-1.item-col-padding { padding: 1.8% 2% 2.2% 2% }
 }
 
 /* Mobiles: inner padding for child columns  */
 @media (max-width: 767px) {
-  .item-col-3.item-col-padding { padding: 6.5% 7% 7% 7% }
+    .item-col-1.item-col-padding { padding: 6.5% 7% 7% 7% }
 }
 
+
+/* Desktops: paragraph line-spacing and bottom margin */
+@media (min-width: 768px) {
+    .item-col-1 p { line-height: 1.6; margin-bottom: 20px }
+}
+
+/* Mobiles: paragraph line-spacing and bottom margin */
+@media (max-width: 767px) {
+    .item-col-1 p { line-height: 1.4; margin-bottom: 14px }
+}
 
 /* No vertical spacing under final item inside child columns */
-.item-col-3 *:last-child { margin-bottom: 0 }
+.item-col-1 *:last-child { margin-bottom: 0 }
 
 /* Images inside child columns */
-.item-col-3 img { margin-bottom: 20px }
-
-.first-txt {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  text-align: center;
-  transform: translate(-50%, -50%);
-  z-index:1;
-}
+.item-col-1 img { margin-bottom: 20px }
