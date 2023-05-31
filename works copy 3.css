@@ -77,7 +77,7 @@ img { width: 100%;
       text-align: left;
     } 
    
-    /* ========== MAIN CONTENT CONTAINERS ========= */
+         /* ========== MAIN CONTENT CONTAINERS ========= */
 /* Desktops */
 @media (min-width:768px) { .container-block { padding: 11% 8% } }
 
