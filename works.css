@@ -38,7 +38,7 @@ img {
   }
   
   .topnav a:hover {
-    color: rgb(118, 164, 255);
+    color: #037da3;
   }
 
   
@@ -89,7 +89,7 @@ img {
       text-align: right;
     }
     li a {
-      color: #8b8a8a;
+      color: #cecece;
       padding: 8px 16px;
       text-decoration: none;
       font-style: oblique;
@@ -102,7 +102,7 @@ img {
     }
     
     li a:hover:not(.active) {
-      color: rgb(207, 162, 162);
+      color: #ffa9ba;
     }
     .newspaper {
       column-count: 3;
@@ -143,4 +143,7 @@ img {
         flex: 100%;
         max-width: 100%;
       }
+    }
+    cv {
+      width: 40%;
     }
