@@ -144,6 +144,10 @@ img {
         max-width: 100%;
       }
     }
-    cv {
-      width: 40%;
+    .ul-divider {
+      border-left: 1px solid black;
+      height: 10%;
+      position: absolute;
+      left: 25%; /* Adjust this value as needed */
+      top: 120px;
     }
