@@ -102,7 +102,7 @@ img {
     }
     
     li a:hover:not(.active) {
-      color: #ffa9ba;
+      color: #037da3;
     }
     .newspaper {
       column-count: 3;

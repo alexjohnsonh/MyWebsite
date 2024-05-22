@@ -39,7 +39,7 @@ img {
     }
     
     .topnav a:hover {
-      color: rgb(255, 118, 150);
+      color: rgb(16, 131, 255);
     }
   
     
@@ -230,5 +230,5 @@ img {
     }
     
     .social-media-item a:hover {
-        color: rgb(255, 118, 150);
+      color: rgb(16, 131, 255);
     }
