@@ -12,7 +12,7 @@ let isMouseInNavbar = false;
 for (let i = 0; i < 60; i++) {
     bubbles.push({
         x: Math.random() * canvas.width,
-        y: Math.random() * (canvas.height - document.querySelector('.topnav').offsetHeight) + document.querySelector('.topnav').offsetHeight,
+        y: Math.random() * canvas.height + document.querySelector('.topnav').offsetHeight,
         radius: Math.random() * 60 + 20,
         speed: Math.random() * 0.5 + 0.3,
         angle: Math.random() * Math.PI * 2,
@@ -56,10 +56,10 @@ function update() {
         bubble.y += Math.sin(bubble.angle) * bubble.speed;
 
         // Bounce off the edges of the canvas and the navigation menu
-        if (bubble.x < bubble.radius || bubble.x > canvas.width - bubble.radius) {
+        if (bubble.x - bubble.radius <= 0 || bubble.x + bubble.radius >= canvas.width) {
             bubble.angle = Math.PI - bubble.angle;
         }
-        if (bubble.y < document.querySelector('.topnav').offsetHeight + bubble.radius || bubble.y > canvas.height - bubble.radius) {
+        if (bubble.y - bubble.radius <= document.querySelector('.topnav').offsetHeight || bubble.y + bubble.radius >= canvas.height) {
             bubble.angle = -bubble.angle;
         }
     }
