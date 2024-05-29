@@ -1,7 +1,7 @@
 const canvas = document.getElementById('canvas');
 const ctx = canvas.getContext('2d');
 canvas.width = window.innerWidth;
-canvas.height = window.innerHeight - 50; // Adjust the height to account for the navigation bar
+canvas.height = window.innerHeight - document.querySelector('.topnav').offsetHeight;
 
 const bubbles = [];
 let mouseX = canvas.width / 2;
@@ -12,7 +12,7 @@ let isMouseInNavbar = false;
 for (let i = 0; i < 60; i++) {
     bubbles.push({
         x: Math.random() * canvas.width,
-        y: Math.random() * canvas.height,
+        y: Math.random() * (canvas.height - document.querySelector('.topnav').offsetHeight) + document.querySelector('.topnav').offsetHeight,
         radius: Math.random() * 60 + 20,
         speed: Math.random() * 0.5 + 0.3,
         angle: Math.random() * Math.PI * 2,
@@ -55,11 +55,11 @@ function update() {
         bubble.x += Math.cos(bubble.angle) * bubble.speed;
         bubble.y += Math.sin(bubble.angle) * bubble.speed;
 
-        // Bounce off the edges of the canvas
-        if (bubble.x < 0 || bubble.x > canvas.width) {
+        // Bounce off the edges of the canvas and the navigation menu
+        if (bubble.x < bubble.radius || bubble.x > canvas.width - bubble.radius) {
             bubble.angle = Math.PI - bubble.angle;
         }
-        if (bubble.y < 0 || bubble.y > canvas.height) {
+        if (bubble.y < document.querySelector('.topnav').offsetHeight + bubble.radius || bubble.y > canvas.height - bubble.radius) {
             bubble.angle = -bubble.angle;
         }
     }
@@ -92,7 +92,7 @@ canvas.addEventListener('mousemove', (event) => {
     const rect = canvas.getBoundingClientRect();
     mouseX = event.clientX - rect.left;
     mouseY = event.clientY - rect.top;
-    isMouseInNavbar = mouseY < 50;
+    isMouseInNavbar = mouseY < document.querySelector('.topnav').offsetHeight;
 });
 
 // Reset mouse position when mouse leaves the canvas
@@ -105,5 +105,5 @@ canvas.addEventListener('mouseleave', () => {
 // Resize the canvas when the window is resized
 window.addEventListener('resize', () => {
     canvas.width = window.innerWidth;
-    canvas.height = window.innerHeight - 50;
+    canvas.height = window.innerHeight - document.querySelector('.topnav').offsetHeight;
 });
